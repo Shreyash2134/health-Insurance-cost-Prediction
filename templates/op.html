@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Insurance Result</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../static/css/materialize.css" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="purple darken-4">
+    <div class="nav-wrapper container">
+        <a class="brand-logo">Insurance Result</a>
+    </div>
+</nav>
+
+<div class="container">
+    <br>
+
+    <!-- ================= SINGLE RESULT ================= -->
+    {% if pred %}
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title red-text">Prediction Result</span>
+
+            <p><b>{{ pred }}</b></p>
+            <p>{{ premium }}</p>
+            <p>{{ decision }}</p>
+            <p>{{ claim }}</p>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- ================= CSV TABLE RESULT ================= -->
+    {% if tables %}
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title blue-text">CSV Results</span>
+
+            {% for table in tables %}
+                {{ table|safe }}
+            {% endfor %}
+
+            <br><br>
+            <a href="/static/output.csv" class="btn green" download>
+                Download CSV
+            </a>
+        </div>
+    </div>
+    {% endif %}
+
+    <br>
+
+    <!-- BACK BUTTON -->
+    <div class="center">
+        <a href="/" class="btn grey">Go Back</a>
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="../static/js/materialize.js"></script>
+
+</body>
+</html>

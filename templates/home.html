@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Medical Insurance Prediction</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../static/css/materialize.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<nav class="purple darken-4">
+  <div class="nav-wrapper container">
+    <a class="brand-logo">Insurance App</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h4 class="center red-text">Medical Insurance Cost Prediction</h4>
+
+  <!-- ================= FORM ================= -->
+  <form action="/predict" method="post">
+
+    <div class="row">
+
+      <div class="input-field col s4">
+        <input name="age" type="number" required>
+        <label>Age</label>
+      </div>
+
+      <div class="input-field col s4">
+        <input name="height" type="number" required>
+        <label>Height (cm)</label>
+      </div>
+
+      <div class="input-field col s4">
+        <input name="weight" type="number" required>
+        <label>Weight (kg)</label>
+      </div>
+
+      <div class="input-field col s4">
+        <input name="children" type="number">
+        <label>Children</label>
+      </div>
+
+      <div class="input-field col s4">
+        <input name="gender" type="text" placeholder="male/female">
+        <label>Gender</label>
+      </div>
+
+      <div class="input-field col s4">
+        <input name="smoker" type="text" placeholder="yes/no">
+        <label>Smoker</label>
+      </div>
+
+      <div class="input-field col s4">
+        <input name="region" type="text" placeholder="northeast/northwest/southeast/southwest">
+        <label>Region</label>
+      </div>
+
+      <div class="input-field col s4">
+        <input name="alcoholic" type="text" placeholder="yes/no">
+        <label>Alcoholic</label>
+      </div>
+
+      <div class="input-field col s4">
+        <input name="disease" type="text" placeholder="none/diabetes/heart">
+        <label>Disease</label>
+      </div>
+
+      <div class="input-field col s4">
+        <input name="treatment" type="text" placeholder="none/ongoing">
+        <label>Treatment</label>
+      </div>
+
+      <div class="input-field col s4">
+        <input name="duration" type="number" placeholder="years">
+        <label>Disease Duration</label>
+      </div>
+
+    </div>
+
+    <div class="center">
+      <button type="submit" class="btn-large purple">Predict Insurance</button>
+    </div>
+
+  </form>
+
+  <br><hr><br>
+
+  <!-- ================= CSV UPLOAD ================= -->
+  <div class="center">
+    <h5>Upload Google Form CSV</h5>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" required>
+      <br><br>
+      <button type="submit" class="btn">Upload & Process</button>
+    </form>
+  </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="../static/js/materialize.js"></script>
+
+</body>
+</html>
