@@ -1,0 +1,105 @@
+<mxfile host="65bd71144e">
+    <diagram id="class-diagram" name="MediShield Classes">
+        <mxGraphModel dx="234" dy="155" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="850" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="class1" value="FlaskController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#121212;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="50" width="260" height="122" as="geometry"/>
+                </mxCell>
+                <mxCell id="class1_attr" value="- app: Flask&lt;br&gt;- model: RandomForestRegressor" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontColor=#000000;" parent="class1" vertex="1">
+                    <mxGeometry y="26" width="260" height="36" as="geometry"/>
+                </mxCell>
+                <mxCell id="class1_div" value="" style="line;strokeWidth=3;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="class1" vertex="1">
+                    <mxGeometry y="62" width="260" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="class1_meth" value="+ home(): HTML&lt;br&gt;+ predict(request: Form): HTML&lt;br&gt;+ upload(request: File): HTML" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontColor=#000000;" parent="class1" vertex="1">
+                    <mxGeometry y="70" width="260" height="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="class2" value="DataProcessor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a1919;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="280" width="260" height="124" as="geometry"/>
+                </mxCell>
+                <mxCell id="class2_attr" value="- required_cols: List[str]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontColor=#0f0f0f;" parent="class2" vertex="1">
+                    <mxGeometry y="26" width="260" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="class2_div" value="" style="line;strokeWidth=3;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="class2" vertex="1">
+                    <mxGeometry y="46" width="260" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="class2_meth" value="+ calculate_bmi(ht: float, wt: float): float&lt;br&gt;+ encode_gender(gender: str): int&lt;br&gt;+ encode_smoker(smoker: str): int&lt;br&gt;+ clean_data(df: DataFrame): DataFrame" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontColor=#000000;strokeWidth=4;" parent="class2" vertex="1">
+                    <mxGeometry y="54" width="260" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="" style="edgeStyle=none;html=1;strokeColor=#121212;fontColor=#1f1e1e;" edge="1" parent="1" source="class3" target="class1_meth">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="class3" value="ActuarialEngine" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#0d0d0d;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="280" width="280" height="156" as="geometry"/>
+                </mxCell>
+                <mxCell id="class3_attr" value="- INFLATION_RATE: float = 0.12&lt;br&gt;- EXPENSE_RATIO_TIERS: dict" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontColor=#000000;" parent="class3" vertex="1">
+                    <mxGeometry y="26" width="280" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="class3_div" value="" style="line;strokeWidth=3;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="class3" vertex="1">
+                    <mxGeometry y="66" width="280" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="class3_meth" value="+ adjust_risk(cost: float, data: dict): float&lt;br&gt;+ get_probability_of_claim(age: int, smoker: int, bmi: float, disease: str): float&lt;br&gt;+ calc_premium(cost: float, age: int, sum: int): float&lt;br&gt;+ future_premium(base: float, yrs: int): float&lt;br&gt;+ req_coverage(base: int, yrs: int): float" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontColor=#1a1a1a;" parent="class3" vertex="1">
+                    <mxGeometry y="74" width="280" height="82" as="geometry"/>
+                </mxCell>
+                <mxCell id="class4" value="MultiPlanSystem" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="280" width="310" height="108" as="geometry"/>
+                </mxCell>
+                <mxCell id="class4_attr" value="+ PLANS: Dictionary" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontColor=#171717;" parent="class4" vertex="1">
+                    <mxGeometry y="26" width="310" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="class4_div" value="" style="line;strokeWidth=3;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="class4" vertex="1">
+                    <mxGeometry y="46" width="310" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="class4_meth" value="+ apply_plan_adjustment(prem: float, plan: dict): float&lt;br&gt;+ apply_plan_claim(claim: float, plan: dict, sum: int): float" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontColor=#121212;" parent="class4" vertex="1">
+                    <mxGeometry y="54" width="310" height="54" as="geometry"/>
+                </mxCell>
+                <mxCell id="class5" value="Underwriter" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#0d0d0d;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="520" width="260" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="class5_attr" value="- score_threshold: int = 5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontColor=#141414;" parent="class5" vertex="1">
+                    <mxGeometry y="26" width="260" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="class5_div" value="" style="line;strokeWidth=3;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="class5" vertex="1">
+                    <mxGeometry y="46" width="260" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="class5_meth" value="+ calculate_claim(cost: float, sum: int): float&lt;br&gt;+ underwriting(base_cost: float, adj_cost: float, age: int): str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontColor=#1f1e1e;" parent="class5" vertex="1">
+                    <mxGeometry y="54" width="260" height="36" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="class6" value="NCBEngine" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#0d0d0d;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="450" width="310" height="108" as="geometry"/>
+                </mxCell>
+                <mxCell id="class6_attr" value="- MAX_NCB_DISCOUNT: float = 0.50&lt;br&gt;- NCB_PER_YEAR: float = 0.05" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontColor=#171717;" parent="class6" vertex="1">
+                    <mxGeometry y="26" width="310" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="class6_div" value="" style="line;strokeWidth=3;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="class6" vertex="1">
+                    <mxGeometry y="66" width="310" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="class6_meth" value="+ calculate_ncb(years: int): float&lt;br&gt;+ simulate_claim_probability(): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontColor=#121212;" parent="class6" vertex="1">
+                    <mxGeometry y="74" width="310" height="34" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="edge1" value="&amp;lt;&amp;lt;uses&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontColor=#000000;strokeColor=#121212;" parent="1" source="class1" target="class2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge2" value="&amp;lt;&amp;lt;uses&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;" parent="1" source="class1" target="class3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge3" value="&amp;lt;&amp;lt;uses&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontColor=#1a1a1a;strokeColor=#1d1b1b;" parent="1" source="class1" target="class4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge4" value="&amp;lt;&amp;lt;uses&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontColor=#f4ecec;strokeColor=#121212;" parent="1" source="class1" target="class5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge5" value="&amp;lt;&amp;lt;uses&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontColor=#faf5f5;strokeColor=#171616;" parent="1" source="class3" target="class5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge6" value="&amp;lt;&amp;lt;uses&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontColor=#faf5f5;strokeColor=#171616;" parent="1" source="class3" target="class6" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

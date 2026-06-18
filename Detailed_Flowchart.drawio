@@ -1,0 +1,230 @@
+<mxfile host="65bd71144e">
+    <diagram id="flowchart" name="System Flowchart">
+        <mxGraphModel dx="1196" dy="793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="start" value="Start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontColor=#000000;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="20" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="choose_input" value="Select Input Method" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;labelBackgroundColor=none;fontColor=#000000;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="110" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_start" style="fontSize=12;strokeWidth=3;labelBackgroundColor=default;strokeColor=#000000;" parent="1" source="start" target="choose_input" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="single_input" value="Input Single Patient Details" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1f1f1f;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="210" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_choose_single" value="Web Form" style="strokeColor=#000000;fontColor=#272626;labelBackgroundColor=none;fontSize=12;strokeWidth=3;" parent="1" source="choose_input" target="single_input" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="340" y="150"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="validate" value="Input Valid?&lt;br style=&quot;font-size: 12px;&quot;&gt;(Age, Height, etc.)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#0a0a0a;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="300" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_in_val" style="strokeColor=#000000;fontSize=12;strokeWidth=3;" parent="1" source="single_input" target="validate" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="err_msg" value="Return Error MSG" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1a1919;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="400" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_val_err" value="No" style="strokeColor=#121212;fontColor=#0d0d0d;labelBackgroundColor=none;fontSize=12;strokeWidth=3;" parent="1" source="validate" target="err_msg" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_err_back" style="strokeColor=#050505;fontSize=12;strokeWidth=3;" parent="1" source="err_msg" target="choose_input" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="435" y="150"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="preprocess" value="Calculate BMI &amp;amp;&lt;br style=&quot;font-size: 12px;&quot;&gt;Encode Categorical Data" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="420" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_val_pre" value="Yes" style="strokeColor=#242323;fontColor=#222020;labelBackgroundColor=none;fontSize=12;strokeWidth=3;" parent="1" source="validate" target="preprocess" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="230" y="340"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="csv_input" value="Upload CSV File" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#141414;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="210" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_choose_csv" value="Bulk CSV" style="strokeColor=#100f0f;fontColor=#171717;labelBackgroundColor=none;fontSize=12;strokeWidth=3;" parent="1" source="choose_input" target="csv_input" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="870" y="150"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="val_csv" value="Valid File?&lt;br style=&quot;font-size: 12px;&quot;&gt;(.csv, &amp;lt;=1000 rows)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="800" y="300" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_csv_val" style="strokeWidth=3;fontSize=12;" edge="1" parent="1" source="csv_input" target="val_csv">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_val_csv_err" value="No" style="strokeColor=#100f0f;strokeWidth=3;fontSize=12;" edge="1" parent="1" source="val_csv" target="err_msg">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="750" y="340"/>
+                            <mxPoint x="750" y="430"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="clean_csv" value="Clean &amp;amp; Validate Columns" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="900" y="390" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_csv_clean" value="Yes" style="strokeColor=#0f0f0f;fontSize=12;strokeWidth=3;" parent="1" source="val_csv" target="clean_csv" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="980" y="340"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="row_loop" value="For Each Row in df&lt;br style=&quot;font-size: 12px;&quot;&gt;(Calculate BMI &amp;amp; Encode)" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#1a1a1a;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="900" y="480" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_clean_loop" style="strokeColor=#000000;fontSize=12;strokeWidth=3;" parent="1" source="clean_csv" target="row_loop" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ml_infer" value="RandomForestRegressor&lt;br style=&quot;font-size: 12px;&quot;&gt;model.predict(features)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="520" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_pre_ml" style="strokeColor=#000000;fontSize=12;strokeWidth=3;" parent="1" source="preprocess" target="ml_infer" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="230" y="550"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_loop_ml" value="Extract features" style="strokeColor=#000000;fontSize=12;strokeWidth=3;" parent="1" source="row_loop" target="ml_infer" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="980" y="600"/>
+                            <mxPoint x="800" y="600"/>
+                            <mxPoint x="800" y="550"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="risk_adj" value="Adjust Risk&lt;br style=&quot;font-size: 12px;&quot;&gt;(Disease, Alcohol, etc.)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="610" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_ml_risk" style="strokeColor=#000000;fontSize=12;strokeWidth=3;" parent="1" source="ml_infer" target="risk_adj" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="sim_claim" value="Simulate Claim&lt;br style=&quot;font-size: 12px;&quot;&gt;(Log-Normal Shock)" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;fontSize=12;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="690" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_risk_sim" style="strokeColor=#151414;strokeWidth=3;fontSize=12;" edge="1" parent="1" source="risk_adj" target="sim_claim">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="calc_prem" value="Calculate Base Premium&lt;br style=&quot;font-size: 12px;&quot;&gt;(Includes 18% GST)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;strokeWidth=3;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="770" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_sim_prem" style="strokeColor=#1a1919;strokeWidth=3;fontSize=12;" edge="1" parent="1" source="sim_claim" target="calc_prem">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="multi_tier" value="Apply Basic / Std / Premium&lt;br style=&quot;font-size: 12px;&quot;&gt;Plan Adjustments" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;fontSize=12;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="850" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_prem_tier" style="strokeColor=#1a1919;strokeWidth=3;fontSize=12;" edge="1" parent="1" source="calc_prem" target="multi_tier">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="year_loop" value="Loop Y = 5, 10, 15, 20 Years" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#1d1b1b;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="930" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_tier_year" style="strokeColor=#0d0d0d;strokeWidth=3;fontSize=12;" edge="1" parent="1" source="multi_tier" target="year_loop">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="year_calc" value="Apply Inflation (12% Cost, 10% SI)&lt;br style=&quot;font-size: 12px;&quot;&gt;Apply NCB Discount (5%/yr)&lt;br style=&quot;font-size: 12px;&quot;&gt;Check Claim Probability" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="495" y="1020" width="210" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_year_calc" style="strokeColor=#1a1a1a;fontSize=12;strokeWidth=3;" parent="1" source="year_loop" target="year_calc" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_calc_back" value="Next Y" style="strokeColor=#212121;fontColor=#1d1b1b;labelBackgroundColor=none;fontSize=12;strokeWidth=3;" parent="1" source="year_calc" target="year_loop" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="450" y="1055"/>
+                            <mxPoint x="450" y="960"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="underwriting" value="Underwriting Decision&lt;br style=&quot;font-size: 12px;&quot;&gt;(Score based rules)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="1130" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_year_uw" value="Done" style="strokeColor=#171717;fontColor=#000000;labelBackgroundColor=none;fontSize=12;strokeWidth=3;" parent="1" source="year_loop" target="underwriting" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="750" y="960"/>
+                            <mxPoint x="750" y="1160"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="req_cov" value="Calculate Required Coverage&lt;br style=&quot;font-size: 12px;&quot;&gt;(12% inflation x 20 yrs)" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="1220" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_uw_cov" style="strokeWidth=3;fontSize=12;" edge="1" parent="1" source="underwriting" target="req_cov">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="check_mode" value="Mode?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#100f0f;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="1310" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_cov_mode" style="strokeWidth=3;fontSize=12;" edge="1" parent="1" source="req_cov" target="check_mode">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_mode_loop" value="CSV (Append Row Result)" style="strokeColor=#1f1e1e;fontColor=#272626;labelBackgroundColor=none;fontSize=12;strokeWidth=3;" parent="1" source="check_mode" target="row_loop" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1110" y="1350"/>
+                            <mxPoint x="1110" y="520"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="render_single" value="Render op.html&lt;br style=&quot;font-size: 12px;&quot;&gt;with Visual Results" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1a1a1a;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="1420" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_mode_single" value="Single Form" style="strokeColor=#000000;fontColor=#121111;labelBackgroundColor=none;fontSize=13;strokeWidth=3;" parent="1" source="check_mode" target="render_single" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="350" y="1350"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="gen_csv" value="Generate output.csv&lt;br style=&quot;font-size: 12px;&quot;&gt;&amp;amp; Render Download Link" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#121212;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="900" y="1420" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_loop_done" value="All Rows Done" style="strokeColor=#000000;fontColor=#0a0a0a;labelBackgroundColor=none;fontSize=12;strokeWidth=3;" parent="1" source="row_loop" target="gen_csv" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1160" y="520"/>
+                            <mxPoint x="1160" y="1450"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="end" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontColor=#0a0a0a;fontSize=12;strokeWidth=3;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="1520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_rend1" style="strokeColor=#1a1919;fontSize=12;strokeWidth=3;" parent="1" source="render_single" target="end" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="350" y="1550"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_rend2" style="strokeColor=#0d0d0d;fontSize=12;strokeWidth=3;" parent="1" source="gen_csv" target="end" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="990" y="1550"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

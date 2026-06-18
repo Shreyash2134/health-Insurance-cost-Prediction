@@ -1,0 +1,70 @@
+<mxfile host="65bd71144e">
+    <diagram id="usecase-diagram" name="MediShield Use Case">
+        <mxGraphModel dx="769" dy="510" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="boundary" value="MediShield System" style="swimlane;whiteSpace=wrap;html=1;startSize=23;strokeColor=#121212;fontColor=#0d0d0d;fillColor=none;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="80" width="450" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="actor1" value="Individual User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontColor=#1a1a1a;strokeColor=#1a1919;fillColor=none;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="160" width="40" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="actor2" value="Enterprise / HR" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#121111;fontColor=#0f0f0f;labelBackgroundColor=none;fillColor=none;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="230" width="40" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc1" value="Predict Base Cost" style="ellipse;whiteSpace=wrap;html=1;fontColor=#080808;strokeColor=#0a0a0a;fillColor=none;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="150" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc2" value="Generate Multi-Tier Plans" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#151414;fillColor=none;strokeColor=#141414;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="250" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc3" value="Project Inflation" style="ellipse;whiteSpace=wrap;html=1;fontColor=#100f0f;strokeColor=#000000;fillColor=none;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="120" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc4" value="Process Bulk CSV" style="ellipse;whiteSpace=wrap;html=1;fontColor=#0d0d0d;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="380" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc5" value="Download Report" style="ellipse;whiteSpace=wrap;html=1;fontColor=#171717;fillColor=none;strokeColor=#121212;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="450" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc6" value="Underwriting Decision" style="ellipse;whiteSpace=wrap;html=1;fontColor=#030303;fillColor=none;strokeColor=#1a1919;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="270" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc7" value="View NCB Discount" style="ellipse;whiteSpace=wrap;html=1;fontColor=#000000;fillColor=none;strokeColor=#1c1c1c;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="350" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge1" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#0d0d0d;strokeWidth=2;" parent="1" source="actor1" target="uc1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge2" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#0d0d0d;strokeWidth=2;" parent="1" source="actor2" target="uc4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_user_csv" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1" source="actor1" target="uc4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_user_uw" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#1c1c1c;strokeWidth=2;" edge="1" parent="1" source="actor1" target="uc6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc1" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;strokeColor=#1a1919;fontColor=#1a1919;labelBackgroundColor=none;strokeWidth=2;" parent="1" source="uc1" target="uc2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc2" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;strokeColor=#0d0d0d;fontColor=#000000;labelBackgroundColor=none;strokeWidth=2;fontSize=12;" parent="1" source="uc1" target="uc3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc3" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;strokeColor=#121212;fontColor=none;noLabel=1;strokeWidth=2;" parent="1" source="uc4" target="uc2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc4" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontColor=#1f1e1e;strokeColor=#1c1c1c;labelBackgroundColor=none;strokeWidth=2;" parent="1" source="uc4" target="uc5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc5" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;strokeColor=#1a1919;fontColor=#000000;labelBackgroundColor=none;strokeWidth=2;" edge="1" parent="1" source="uc1" target="uc6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc6" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;strokeColor=#0a0a0a;fontColor=#1f1e1e;labelBackgroundColor=none;strokeWidth=2;" edge="1" parent="1" source="uc1" target="uc7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

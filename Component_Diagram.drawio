@@ -1,0 +1,58 @@
+<mxfile host="65bd71144e">
+    <diagram id="component-diagram" name="MediShield Components">
+        <mxGraphModel dx="430" dy="205" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="comp_ui" value="Web UI Forms &amp;amp; Dashboard" style="shape=component;align=center;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#121212;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="250" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="comp_flask" value="Flask Web Controller" style="shape=component;align=center;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#121212;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="250" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="comp_sec" value="Input Security &amp;amp; Validation" style="shape=component;align=center;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="250" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="comp_data" value="Data Encoder &amp;amp; Preprocessor" style="shape=component;align=center;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#121212;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="400" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="comp_ml" value="Random Forest Predictor" style="shape=component;align=center;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#0d0d0d;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="250" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="comp_db" value="rf_tuned.pkl Storage" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="820" y="400" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="comp_act" value="Actuarial Pricing Engine" style="shape=component;align=center;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#0d0d0d;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="100" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="comp_plan" value="Multi-Tier Plan Generator" style="shape=component;align=center;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="100" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_1" value="HTTP POST" style="endArrow=open;dashed=1;html=1;rounded=0;" parent="1" source="comp_ui" target="comp_flask" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_2" value="Request Data" style="endArrow=open;dashed=1;html=1;rounded=0;" parent="1" source="comp_flask" target="comp_sec" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_3" value="Validated Input" style="endArrow=open;dashed=1;html=1;rounded=0;strokeColor=#000000;strokeWidth=4;" parent="1" source="comp_sec" target="comp_data" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_4" value="Encoded Array" style="end:open;dashed=1;html=1;rounded=0;strokeColor=#0d0d0d;strokeWidth=4;" parent="1" source="comp_data" target="comp_ml" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_5" value="Loads Model" style="endArrow=open;dashed=1;html=1;rounded=0;strokeColor=#1c1c1c;strokeWidth=4;" parent="1" source="comp_ml" target="comp_db" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_6" value="Raw Cost" style="endArrow=open;dashed=1;html=1;rounded=0;strokeColor=#1a1a1a;strokeWidth=4;" parent="1" source="comp_ml" target="comp_act" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_7" value="Base Premium" style="endArrow=open;dashed=1;html=1;rounded=0;" parent="1" source="comp_act" target="comp_plan" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_8" value="JSON Plan Configs" style="endArrow=open;dashed=1;html=1;rounded=0;fontColor=#f6f4f4;strokeColor=#1a1919;strokeWidth=4;" parent="1" source="comp_plan" target="comp_flask" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

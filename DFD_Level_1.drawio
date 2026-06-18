@@ -1,0 +1,93 @@
+<mxfile host="65bd71144e">
+    <diagram id="dfd-level-1" name="DFD Level 1">
+        <mxGraphModel dx="978" dy="649" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="e1" value="User / HR" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#111212;fontStyle=1;fontColor=#1a1a1a;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="300" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p1" value="1.0&lt;br style=&quot;font-size: 12px;&quot;&gt;Validate Input&lt;br style=&quot;font-size: 12px;&quot;&gt;(Form/CSV)" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#111212;fontColor=#1a1a1a;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="280" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="f1" value="Raw Data&lt;br style=&quot;font-size: 12px;&quot;&gt;(Age, BMI, etc)" style="endArrow=classic;html=1;entryX=0;entryY=0.5;fontColor=#1a1a1a;strokeColor=#111212;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" edge="1" parent="1" source="e1" target="p1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f_err" value="Validation Errors" style="endArrow=classic;html=1;exitX=0;exitY=0;entryX=0.5;entryY=0;fontColor=#1a1a1a;strokeColor=#111212;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" edge="1" parent="1" source="p1" target="e1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="200" y="220"/>
+                            <mxPoint x="100" y="220"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="p2" value="2.0&lt;br style=&quot;font-size: 12px;&quot;&gt;Data Preprocessing&lt;br style=&quot;font-size: 12px;&quot;&gt;&amp;amp; Encoding" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#111212;fontColor=#1a1a1a;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="280" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="f2" value="Valid Data" style="endArrow=classic;html=1;entryX=0;entryY=0.5;fontColor=#1a1a1a;strokeColor=#111212;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" edge="1" parent="1" source="p1" target="p2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="p3" value="3.0&lt;br style=&quot;font-size: 12px;&quot;&gt;ML Cost Inference" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#111212;fontColor=#1a1a1a;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="280" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="f3" value="Features Array" style="endArrow=classic;html=1;entryX=0;entryY=0.5;fontColor=#1a1a1a;strokeColor=#111212;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" edge="1" parent="1" source="p2" target="p3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="d1" value="D1 : rf_tuned.pkl" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=#e1d5e7;strokeColor=#111212;fontStyle=1;fontColor=#1a1a1a;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="150" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="f_d1" value="Model Weights" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontColor=#1a1a1a;strokeColor=#111212;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" edge="1" parent="1" source="d1" target="p3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4" value="4.0&lt;br style=&quot;font-size: 12px;&quot;&gt;Actuarial Pricing &amp;amp;&lt;br style=&quot;font-size: 12px;&quot;&gt;Risk Adjustment" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#111212;fontColor=#1a1a1a;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="850" y="280" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="f4" value="Predicted Base Cost" style="endArrow=classic;html=1;entryX=0;entryY=0.5;fontColor=#1a1a1a;strokeColor=#111212;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" edge="1" parent="1" source="p3" target="p4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="d2" value="D2 : Multi-Plan Config" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=#e1d5e7;strokeColor=#111212;fontStyle=1;fontColor=#1a1a1a;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="150" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="f_d2" value="Rules (Copay, Deductible)" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontColor=#1a1a1a;strokeColor=#111212;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" edge="1" parent="1" source="d2" target="p4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="p5" value="5.0&lt;br style=&quot;font-size: 12px;&quot;&gt;NCB &amp;amp; Multi-Year&lt;br style=&quot;font-size: 12px;&quot;&gt;Simulation" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#111212;fontColor=#1a1a1a;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="1050" y="280" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="f5" value="Base Premium&lt;br style=&quot;font-size: 12px;&quot;&gt;+ Adj Cost" style="endArrow=classic;html=1;entryX=0;entryY=0.5;fontColor=#1a1a1a;strokeColor=#111212;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" edge="1" parent="1" source="p4" target="p5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="p6" value="6.0&lt;br style=&quot;font-size: 12px;&quot;&gt;Underwriting Assessment" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#111212;fontColor=#1a1a1a;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="850" y="450" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="f6_1" value="Base Cost" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0;entryY=0.5;fontColor=#1a1a1a;strokeColor=#111212;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" edge="1" parent="1" source="p3" target="p6">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="700" y="500"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="f6_2" value="Adj Cost" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontColor=#1a1a1a;strokeColor=#111212;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" edge="1" parent="1" source="p4" target="p6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="p7" value="7.0&lt;br style=&quot;font-size: 12px;&quot;&gt;Output Generation" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#111212;fontColor=#1a1a1a;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="1050" y="450" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="f7_1" value="Multi-Year Projections" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontColor=#1a1a1a;strokeColor=#111212;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" edge="1" parent="1" source="p5" target="p7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f7_2" value="Decision" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontColor=#1a1a1a;strokeColor=#111212;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" edge="1" parent="1" source="p6" target="p7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="f_out" value="Results (op.html / output.csv)" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=1;fontColor=#1a1a1a;strokeColor=#111212;strokeWidth=2;labelBackgroundColor=none;fontSize=12;" edge="1" parent="1" source="p7" target="e1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1100" y="650"/>
+                            <mxPoint x="100" y="650"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

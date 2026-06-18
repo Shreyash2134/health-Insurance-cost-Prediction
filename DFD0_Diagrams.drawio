@@ -1,0 +1,91 @@
+<mxfile host="65bd71144e">
+    <diagram id="dfd-level-0" name="DFD Level 0 (Context)">
+        <mxGraphModel dx="769" dy="510" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="n0_user" value="&lt;b&gt;Individual User&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="240" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="E7zY9JtgRWane8fEDvVJ-4" style="edgeStyle=none;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;strokeWidth=6;fontSize=13;entryX=1.006;entryY=0.597;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="n0_hr" target="n0_sys" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="280" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="n0_hr" value="&lt;b&gt;HR / Enterprise Broker&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;fontColor=#0d0d0d;" parent="1" vertex="1">
+                    <mxGeometry x="930" y="230" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="E7zY9JtgRWane8fEDvVJ-3" style="edgeStyle=none;html=1;exitX=1.006;exitY=0.408;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;strokeWidth=6;fontSize=13;exitPerimeter=0;" parent="1" source="n0_sys" target="n0_hr" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="n0_sys" value="&lt;br&gt;MediShield&lt;br&gt;System" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontColor=#1a1a1a;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="180" width="170" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="e0_1" value="&lt;b style=&quot;font-size: 13px;&quot;&gt;Health Profile Data&lt;/b&gt;" style="endArrow=classic;html=1;rounded=1;strokeWidth=6;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#ffffff;exitX=1;exitY=0.25;entryX=0.018;entryY=0.435;fontColor=#121212;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=13;" parent="1" source="n0_user" target="n0_sys" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e0_2" value="&lt;b style=&quot;font-size: 12px;&quot;&gt;Premium Quote &amp;amp; Plans&lt;/b&gt;" style="endArrow=classic;html=1;rounded=1;strokeWidth=6;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#ffffff;entryX=1;entryY=0.75;fontColor=#0f0f0f;exitX=0.059;exitY=0.662;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=12;" parent="1" source="n0_sys" target="n0_user" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="490" y="293" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="dfd-level-1" name="DFD Level 1 (Sub-Processes)">
+        <mxGraphModel dx="673" dy="446" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="850" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="n1_user" value="&lt;b&gt;User / HR&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="225" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p1" value="&lt;b&gt;1.0&lt;/b&gt;&lt;br&gt;&lt;br&gt;Input Validation&lt;br&gt;&amp; Sanitization" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="50" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p2" value="&lt;b&gt;2.0&lt;/b&gt;&lt;br&gt;&lt;br&gt;Feature&lt;br&gt;Encoding" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="50" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p3" value="&lt;b&gt;3.0&lt;/b&gt;&lt;br&gt;&lt;br&gt;ML Inference&lt;br&gt;Prediction" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="50" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4" value="&lt;b&gt;4.0&lt;/b&gt;&lt;br&gt;&lt;br&gt;Actuarial&lt;br&gt;Calculations" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="300" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p5" value="&lt;b&gt;5.0&lt;/b&gt;&lt;br&gt;&lt;br&gt;Multi-Plan&lt;br&gt;Generation" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="300" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p6" value="&lt;b&gt;6.0&lt;/b&gt;&lt;br&gt;&lt;br&gt;Output&lt;br&gt;Formatter" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="300" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="d1" value="&lt;b&gt;D1&lt;/b&gt; &amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp; rf_tuned.pkl" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=1;top=1;bottom=1;right=0;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;align=left;spacingLeft=15;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="90" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1_1" value="&lt;b&gt;Raw Demographics &amp; Health Data&lt;/b&gt;" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#ffffff;" parent="1" source="n1_user" target="p1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1_2" value="&lt;b&gt;Cleaned JSON Object&lt;/b&gt;" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#ffffff;" parent="1" source="p1" target="p2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1_3" value="&lt;b&gt;Encoded Numpy Array&lt;/b&gt;" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#ffffff;" parent="1" source="p2" target="p3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1_d1" value="&lt;b&gt;Model Weights&lt;/b&gt;" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#ffffff;" parent="1" source="d1" target="p3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1_4" value="&lt;b&gt;Raw Predicted Cost&lt;/b&gt;" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#ffffff;" parent="1" source="p3" target="p4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1_5" value="&lt;b&gt;Adjusted Premium Base&lt;/b&gt;" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#ffffff;" parent="1" source="p4" target="p5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1_6" value="&lt;b&gt;Tiered Plans Dictionary&lt;/b&gt;" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#ffffff;" parent="1" source="p5" target="p6" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1_7" value="&lt;b&gt;Rendered Dashboard / Output CSV&lt;/b&gt;" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#ffffff;" parent="1" source="p6" target="n1_user" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
